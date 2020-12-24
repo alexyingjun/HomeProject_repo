@@ -1,0 +1,15 @@
+server:
+  port: 8080
+
+## 家乡属性
+home:
+  province: ZheJiang
+  city: WenLin SongMen
+  desc: I'm living at ${home.province} ${home.city}
+
+## 随机属性
+user:
+  id: ${random.long}
+  age: ${random.int[1,200]}
+  desc: name is ${random.value}
+  uuid: ${random.uuid}
