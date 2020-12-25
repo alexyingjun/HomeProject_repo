@@ -22,7 +22,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/demo")
 public class DemoController {
-    @Lazy
+
     @Autowired
     ATPDao atpDao;
 
@@ -48,12 +48,12 @@ public class DemoController {
     }
 
 //    http://140.238.86.212:8080/demo/people/1?name=&addr=8%20flat
-    @RequestMapping(value = "people/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/people/{id}", method = RequestMethod.GET)
     public Result getPeopleById(@PathVariable(value="id") String id, @RequestParam String addr){
         return ResultGenerator.genSuccessResult("Id: "+ id +"      , Address:  "+addr);
     }
 
-    @RequestMapping(value = "people/properties", method = RequestMethod.GET)
+    @RequestMapping(value = "/people/properties", method = RequestMethod.GET)
     public @ResponseBody Result getPeopleProperties(){
         return ResultGenerator.genSuccessResult(userProperties+"   \n   "+homeProperties);
     }
