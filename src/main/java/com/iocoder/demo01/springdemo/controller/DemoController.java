@@ -43,13 +43,15 @@ public class DemoController {
  //   @GetMapping("/people")
     //http://127.0.0.1:8080/demo/people?name=acb&addr=8%20flat
     @RequestMapping(value = "/people", method = RequestMethod.GET)
-    public String getPeople(@RequestParam(defaultValue = "test")String name, @RequestParam(required=false) Optional<String> addr) {
+    public String People(@RequestParam(defaultValue = "test")String name, @RequestParam(required=false) Optional<String> addr) {
+        System.out.println("Invoked in people");
         return "Name: "+name +"   \t\t  Address: "+addr.orElseGet(()->"not provided");
     }
 
 //    http://140.238.86.212:8080/demo/people/1?name=&addr=8%20flat
     @RequestMapping(value = "/people/{id}", method = RequestMethod.GET)
     public Result getPeopleById(@PathVariable(value="id") String id, @RequestParam String addr){
+        System.out.println("Invoked in get people");
         return ResultGenerator.genSuccessResult("Id: "+ id +"      , Address:  "+addr);
     }
 

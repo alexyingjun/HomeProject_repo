@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 @Aspect
 @Component
-public class ControllerAspect {
+public class DemoControllerAspect {
 
     @Before("execution(* com.iocoder.demo01.springdemo.controller.DemoController.get*(..))")
     public void beforeGetRequest(JoinPoint point) {
