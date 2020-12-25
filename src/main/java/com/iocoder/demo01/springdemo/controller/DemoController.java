@@ -10,6 +10,7 @@ import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.web.bind.annotation.*;
 
 import java.text.DateFormat;
@@ -21,6 +22,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/demo")
 public class DemoController {
+    @Lazy
     @Autowired
     ATPDao atpDao;
 
@@ -41,7 +43,7 @@ public class DemoController {
  //   @GetMapping("/people")
     //http://127.0.0.1:8080/demo/people?name=acb&addr=8%20flat
     @RequestMapping(value = "/people", method = RequestMethod.GET)
-    public String people(@RequestParam(defaultValue = "test")String name, @RequestParam(required=false) Optional<String> addr) {
+    public String getPeople(@RequestParam(defaultValue = "test")String name, @RequestParam(required=false) Optional<String> addr) {
         return "Name: "+name +"   \t\t  Address: "+addr.orElseGet(()->"not provided");
     }
 

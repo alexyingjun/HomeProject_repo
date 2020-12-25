@@ -7,11 +7,22 @@ import lombok.NonNull;
 import java.io.*;
 
 @EqualsAndHashCode(exclude={"gender"})
-@Data
 public class User implements Externalizable {
     private String userName ;
     private String gender ;
     private String age ;
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
 
     private void writeObject(ObjectOutputStream out) throws IOException {
         //将 userName 和 gender 写入二进制流

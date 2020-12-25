@@ -10,7 +10,7 @@ import java.util.Properties;
 public class ATPConnectionManager {
  //   final static String DB_URL = "jdbc:oracle:thin:@db202003261453_tp?TNS_ADMIN=/home/opc/wallet";
 
-    private static String walletPath="C:\\Users\\lq120\\IdeaProjects\\HomeProject_repo\\src\\main\\resources\\wallet_DB202003261453";
+    private static String walletPath="C:/Users/lq120/IdeaProjects/HomeProject_repo/src/main/resources/wallet_DB202003261453";
     final static String DB_URL=   "jdbc:oracle:thin:@db202003261453_high?TNS_ADMIN="+walletPath;
     // Use TNS alias when using tnsnames.ora.  Use it while connecting to the database service on cloud.
     // final static String DB_URL=   "jdbc:oracle:thin:@orcldbaccess";
